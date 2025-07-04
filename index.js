@@ -10,7 +10,7 @@ app.use(morgan("tiny"));
 app.use(express.json());
 
 // 错误处理的中间件
-const errorHandler = (error, request, response) => {
+const errorHandler = (error, request, response, next) => {
   console.error(error.message);
   console.error(error.name);
   if (error.name === "CastError") {
